@@ -1,5 +1,30 @@
-//############Is n divisible by x and y?############
-
+//############Find Multiples of a Number############
+function findMultiples(integer, limit) {
+    var outcome = [];
+    for (i=1; i*integer<=limit; i++) {
+      outcome.push(i*integer);
+    }
+    return outcome
+  }
+//############Check the exam############
+function checkExam(array1, array2) {
+    var score = 0;
+    for (i = 0; i < array1.length; i++) {
+      if (array2[i] == "") { 
+        continue; 
+      } else if  (array1[i]!=array2[i]) {
+        score--;
+      } else {
+        score +=4 
+      }
+    }
+    if (score>0){
+        return score 
+    } else{
+        return 0
+    }
+}
+//############Is n divisible by x and y?############ 
 // Long version
 function isDivisible(n, x, y) {
   if (n % x == 0 && n % y == 0) {
