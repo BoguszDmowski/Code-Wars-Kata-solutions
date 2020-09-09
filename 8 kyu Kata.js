@@ -1,3 +1,70 @@
+//############Welcome!############
+function greet(language) {
+  var database = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+//looking by values is harder. Here is the solution for value searching.  
+//  if (Object.values(database).indexOf(language)> -1) {
+    if (database.hasOwnProperty(language)) {
+    return database[language] 
+  } else {
+    return database.english;
+  }
+}
+//############N-th Power############
+//Short version
+const index = (array, n) => (n>=array.length) ? -1 : Math.pow(array[n], n)
+//############Function 1 - hello world############
+const greet = () => "hello world!"// Write a function "greet" that returns "hello world!"
+//############Grasshopper - Create the rooms############
+var rooms = {
+  firstRoom:{name:"bathroom", description:"shower", completed:"True"},
+  secondRoom:{name:"bedroom", description:"sleep", completed:"True"},
+  thirdRoom3:{name:"livingroom", description:"read", completed:"True"}
+ }
+//############Holiday VIII - Duty Free############
+function dutyFree(normPrice, discount, hol){
+  var gain = normPrice*0.01*discount;
+  return Math.floor(hol/gain);
+}
+//############L1: Bartender, drinks!############
+function getDrinkByProfession(param) {
+  var prof = param.toLowerCase();
+  if (prof=="jabroni"){
+      return "Patron Tequila"
+    } else if  (prof=="school counselor"){
+      return "Anything with Alcohol"
+    } else if  (prof=="programmer"){
+      return "Hipster Craft Beer"
+    } else if  (prof=="bike gang member"){
+      return "Moonshine" 
+    } else if  (prof=="politician"){
+      return "Your tax dollars" 
+    } else if  (prof=="rapper"){
+      return "Cristal" 
+    } else {
+      return "Beer"
+    }
+}
+//Also works using "switch" instruction
+//############Quarter of the year############
+const quarterOf = (month) => (month <= 3) ? 1 : (month <= 6) ? 2 :(month <= 9) ? 3 : 4;
 //############Find Multiples of a Number############
 function findMultiples(integer, limit) {
     var outcome = [];
