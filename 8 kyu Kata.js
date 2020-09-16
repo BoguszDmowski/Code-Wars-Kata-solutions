@@ -1,3 +1,210 @@
+//############Beginner Series #2 Clock############
+const past = (h, m, s) => (3600000*h +60000*m +1000*s)
+//############Expressions Matter############
+function expressionMatter(a, b, c) {
+  var v= a + b+ c;
+  var w= a*(b+c);
+  var x= a*b*c;
+  var y= a+b*c;
+  var z= (a+b)*c;
+  
+  return Math.max(v, w, x ,y ,z);
+}
+//############Take the Derivative############
+const derive = (z, y) => (`${z*y}`+"x^"+`${y-1}`)
+//############Find the first non-consecutive number############
+function firstNonConsecutive (arr) {
+  if (arr.length == 0 || arr.length == 1) {
+    return null
+  } else {
+    let z= arr[0];
+    for (i=0; i<=arr.length; i++) {
+      if (arr[i] != z) {
+        return arr[i];
+      } else if ((i+1) == arr.length) {
+        return null;
+      } else {
+        z++;
+      }
+    }
+  }
+}
+//############Subtract the Sum############
+function splitToDigit(x){
+  var sum = [...x + ''].map(Number).reduce(function(a, b){
+  return a + b;}, 0);
+  return x-sum;
+}
+function getFruitName(id){  
+  var name = {
+    1: "kiwi",
+    2: "pear",
+    3: "kiwi",
+    4: "banana",
+    5: "melon",
+    6: "banana",
+    7: "melon",
+    8: "pineapple",
+    9: "apple",
+    10: "pineapple",
+    11: "cucumber",
+    12: "pineapple",
+    13: "cucumber",
+    14: "orange",
+    15: "grape",
+    16: "orange",
+    17: "grape",
+    18: "apple",
+    19: "grape",
+    20: "cherry",
+    21: "pear",
+    22: "cherry",
+    23: "pear",
+    24: "kiwi",
+    25: "banana",
+    26: "kiwi",
+    27: "apple",
+    28: "melon",
+    29: "banana",
+    30: "melon",
+    31: "pineapple",
+    32: "melon",
+    33: "pineapple",
+    34: "cucumber",
+    35: "orange",
+    36: "apple",
+    37: "orange",
+    38: "grape",
+    39: "orange",
+    40: "grape",
+    41: "cherry",
+    42: "pear",
+    43: "cherry",
+    44: "pear",
+    45: "apple",
+    46: "pear",
+    47: "kiwi",
+    48: "banana",
+    49: "kiwi",
+    50: "banana",
+    51: "melon",
+    52: "pineapple",
+    53: "melon",
+    54: "apple",
+    55: "cucumber",
+    56: "pineapple",
+    57: "cucumber",
+    58: "orange",
+    59: "cucumber",
+    60: "orange",
+    61: "grape",
+    62: "cherry",
+    63: "apple",
+    64: "cherry",
+    65: "pear",
+    66: "cherry",
+    67: "pear",
+    68: "kiwi",
+    69: "pear",
+    70: "kiwi",
+    71: "banana",
+    72: "apple",
+    73: "banana",
+    74: "melon",
+    75: "pineapple",
+    76: "melon",
+    77: "pineapple",
+    78: "cucumber",
+    79: "pineapple",
+    80: "cucumber",
+    81: "apple",
+    82: "grape",
+    83: "orange",
+    84: "grape",
+    85: "cherry",
+    86: "grape",
+    87: "cherry",
+    88: "pear",
+    89: "cherry",
+    90: "apple",
+    91: "kiwi",
+    92: "banana",
+    93: "kiwi",
+    94: "banana",
+    95: "melon",
+    96: "banana",
+    97: "melon",
+    98: "pineapple",
+    99: "apple",
+    100: "pineapple",
+  };
+  return name[id];
+}
+
+function SubtractSum(n){
+  var s = splitToDigit(n)
+  for (i=0; i<10000; i++) {
+    if (s<=100) {
+      return getFruitName(s);
+      break;
+    } else {
+      s = splitToDigit(s);
+    }
+  }
+}
+//############Get Planet Name By ID############
+function getPlanetName(id){
+  var name;
+  switch(id){
+    case 1:
+      return 'Mercury';
+      break;
+    case 2:
+      return 'Venus';
+      break;
+    case 3:
+      return 'Earth';
+      break;
+    case 4:
+      return 'Mars';
+      break;
+    case 5:
+      return 'Jupiter';
+      break;
+    case 6:
+      return 'Saturn';
+      break;
+    case 7:
+      return 'Uranus';
+      break;
+    case 8:
+      return 'Neptune';
+      break;
+  }
+  
+  return name;
+}
+//############Holiday VI - Shark Pontoon############
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+  if  (dolphin) {
+    sharkSpeed /=2;
+  };
+  if (pontoonDistance/youSpeed < sharkDistance/sharkSpeed) {
+    return "Alive!" 
+  } else {
+    return "Shark Bait!"
+  }
+}
+//############Smallest unused ID############
+const nextId = ids => {
+  let unique = [...new Set(ids)]; 
+  unique.sort((x, y) => x - y);
+  for (let i = 0; i <= unique.length; i++) {
+    if (i != unique[i]) {
+      return i;
+    } else continue
+  }
+}
 //############Welcome!############
 function greet(language) {
   var database = {
