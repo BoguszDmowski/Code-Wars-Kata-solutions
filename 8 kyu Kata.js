@@ -1,3 +1,36 @@
+//############Beginner Series #1 School Paperwork############
+const paperwork = (n, m) => (n<0 || m<0) ? 0: (n*m)
+//############Array plus array############
+function arrayPlusArray(arr1, arr2) {
+    var sum1 = arr1.reduce(function(a, b){
+          return a + b;
+      }, 0);
+    var sum2 = arr2.reduce(function(a, b){
+      return a + b;
+      }, 0);
+    return  sum1+sum2
+  }
+//############Abbreviate a Two Word Name############
+const abbrevName=name=>name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.')
+//############Total amount of points############
+function points(games) {
+    let score=0;
+    for (i=9; i>=0; i--) {
+      var current = games[i];
+      var output = current.split('')
+       if (output[0]>output[2]){
+         score += 3;
+       } else if (output[0]===output[2]) {
+         score += 1;
+       } 
+    }
+    return score;
+  }
+  
+  ////much more elegant solution to similar problem that I found and adaped////
+  // const points=games=>games.reduce((result,score)=>{
+  //     return result += score[0]>score[2] ? 3 : score[0]===score[2] ? 1 : 0;
+  //   },0)
 //############Beginner Series #2 Clock############
 const past = (h, m, s) => (3600000*h +60000*m +1000*s)
 //############Expressions Matter############
