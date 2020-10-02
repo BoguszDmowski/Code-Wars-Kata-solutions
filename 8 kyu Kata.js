@@ -1,5 +1,117 @@
+//############Is he gonna survive?############
+const hero= (bullets, dragons) => bullets/2 >= dragons? true: false
+
+//############Find the Difference in Age between Oldest and Youngest Family Members############
+function differenceInAges(ages){
+  var sorted = ages.sort(function(a, b){return a-b});
+  var youngest = ages[0];
+  var oldest = ages[ages.length-1];
+  var result = [youngest, oldest, oldest-youngest];
+  return result
+}
+
+//############Will you make it?############
+//Long version
+//const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//   if (distanceToPump/mpg <=fuelLeft) {
+//     return true
+//   } else{
+//     return false
+//   }
+// };
+//Short version
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => distanceToPump/mpg <=fuelLeft ? true:false
+
+//############All Star Code Challenge #18############
+const strCount = (str, letter) => {
+  let count = 0; 
+  for (var position = 0; position < str.length; position++) {
+    if (str.charAt(position) == letter){
+      count += 1;}
+  }  return count;
+}
+
+//############Is it even?############
+const testEven = n => n%2==0 ? true : false
+
+//############Polish alphabet############
+function correctPolishLetters (string) {
+  const letter = {
+    ą: "a",
+    ć: "c",
+    ę: "e" ,
+    ł: "l",
+    ń: "n",
+    ó: "o",
+    ś: "s",
+    ź: "z",
+    ż: "z"
+  };
+  var word = string.replace(/[ąćęłńóśźż]/gi, x => letter[x]);
+  return word;
+}
+
+//############SpeedCode #2 - Array Madness############
+function arrayMadness(a, b) {
+  function power(arr, p) {
+    return arr.map(function (x) {
+      return Math.pow(x, p);
+    });
+  }
+  var arr1 = power(a, 2)
+  var arr2 = power(b, 3)
+  var sum1 = arr1.reduce(function(x, y){
+      return x + y;
+  }, 0);
+  var sum2 = arr2.reduce(function(x, y){
+        return x + y;
+    }, 0);
+  if (sum1>sum2) {
+    return true
+  } else {
+    return false
+  }
+}
+
+//############Is the string uppercase?############
+String.prototype.isUpperCase = function() {
+  var input = this.split("");
+  var outcome = true;
+    for (i=0; i<input.length; i++) {
+    if ((input[i] == input[i].toLowerCase()) && (input[i]==input[i].match(/[a-z]/i))) {
+      outcome=false;
+    }
+  }
+  return outcome;
+}
+
+//############altERnaTIng cAsE <=> ALTerNAtiNG CaSe############
+String.prototype.toAlternatingCase = function () {
+  var hello = this.split("");
+  var newWord = [];
+
+  for (i=0; i<hello.length; i++) {
+    if (hello[i] == hello[i].toLowerCase()) {
+      newWord[i] = hello[i].toUpperCase();
+    }
+    else {
+      newWord[i] = hello[i].toLowerCase();
+    }
+  }
+  return newWord.join("");
+}
+
+//############Sum of positive############
+const positiveSum=arr=>arr.reduce((sum,number)=>{
+    return sum += number>0 ? number : 0;
+  },0)
+
+//############You only need one - Beginner############
+const check= (a, x) => a.includes(x)
+
 //############Beginner Series #1 School Paperwork############
 const paperwork = (n, m) => (n<0 || m<0) ? 0: (n*m)
+
 //############Array plus array############
 function arrayPlusArray(arr1, arr2) {
     var sum1 = arr1.reduce(function(a, b){
@@ -10,8 +122,10 @@ function arrayPlusArray(arr1, arr2) {
       }, 0);
     return  sum1+sum2
   }
+
 //############Abbreviate a Two Word Name############
 const abbrevName=name=>name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.')
+
 //############Total amount of points############
 function points(games) {
     let score=0;
@@ -31,8 +145,10 @@ function points(games) {
   // const points=games=>games.reduce((result,score)=>{
   //     return result += score[0]>score[2] ? 3 : score[0]===score[2] ? 1 : 0;
   //   },0)
+
 //############Beginner Series #2 Clock############
 const past = (h, m, s) => (3600000*h +60000*m +1000*s)
+
 //############Expressions Matter############
 function expressionMatter(a, b, c) {
   var v= a + b+ c;
@@ -43,8 +159,10 @@ function expressionMatter(a, b, c) {
   
   return Math.max(v, w, x ,y ,z);
 }
+
 //############Take the Derivative############
 const derive = (z, y) => (`${z*y}`+"x^"+`${y-1}`)
+
 //############Find the first non-consecutive number############
 function firstNonConsecutive (arr) {
   if (arr.length == 0 || arr.length == 1) {
@@ -62,6 +180,7 @@ function firstNonConsecutive (arr) {
     }
   }
 }
+
 //############Subtract the Sum############
 function splitToDigit(x){
   var sum = [...x + ''].map(Number).reduce(function(a, b){
@@ -185,6 +304,7 @@ function SubtractSum(n){
     }
   }
 }
+
 //############Get Planet Name By ID############
 function getPlanetName(id){
   var name;
@@ -217,6 +337,7 @@ function getPlanetName(id){
   
   return name;
 }
+
 //############Holiday VI - Shark Pontoon############
 function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
   if  (dolphin) {
@@ -228,6 +349,7 @@ function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
     return "Shark Bait!"
   }
 }
+
 //############Smallest unused ID############
 const nextId = ids => {
   let unique = [...new Set(ids)]; 
@@ -238,6 +360,7 @@ const nextId = ids => {
     } else continue
   }
 }
+
 //############Welcome!############
 function greet(language) {
   var database = {
